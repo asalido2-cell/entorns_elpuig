@@ -198,6 +198,24 @@
         transform: translateY(0);
       }
     }
+
+    /* 🔙 Botó tornar */
+    .back-button {
+      position: fixed;
+      top: 110px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: var(--accent);
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 10px;
+      box-shadow: var(--shadow);
+      font-weight: 600;
+      text-decoration: none;
+      transition: 0.3s;
+      z-index: 30;
+    }
   </style>
 </head>
 
@@ -209,7 +227,7 @@
     <h1>ÍNDEX DEL MÒDUL: ENTORNS DE DESENVOLUPAMENT 💡</h1>
     <p>DAW | DAM – Curs 2025/2026</p>
   </header>
- 
+
   <!-- 🌈 Separador animat -->
   <svg class="separator" viewBox="0 0 1440 80" xmlns="http://www.w3.org/2000/svg">
     <defs>
@@ -220,7 +238,7 @@
     </defs>
     <path d="M0,32 C480,80 960,0 1440,48 L1440,80 L0,80 Z"></path>
   </svg>
- <!-- 🔙 Botó Tornar -->
+  <!-- 🔙 Botó Tornar -->
   <a href="index.html" class="back-button">⬅️ Tornar a l'inici</a>
   <!-- 📘 Menú fix sota capçalera -->
   <nav>
@@ -347,7 +365,35 @@
           és verificar i depurar el codi per assegurar-ne la qualitat.</blockquote>
       </details>
     </section>
-
+    <section id="tema3">
+      <details>
+        <summary><a href="tema3/index.html">🧠 Tema 3 (RA3): Depuració i Proves</a></summary>
+        <p><strong>Objectiu general:</strong> Aplicar tècniques de depuració i proves per garantir la qualitat,
+          l’eficiència i la seguretat del codi font.</p>
+        <ul>
+          <li><a href="#">3.1 Concepte de depuració i tipus d’errors</a><br>
+            📘 Identificar els errors sintàctics, lògics i d’execució i comprendre com es detecten amb eines de
+            depuració.</li>
+          <li><a href="#">3.2 Eines i tècniques de depuració</a><br>
+            📘 Utilitzar breakpoints, inspecció de variables i execució pas a pas per a localitzar i corregir defectes.
+          </li>
+          <li><a href="#">3.3 Tipus de proves</a><br>
+            📘 Diferenciar proves unitàries, d’integració, de sistema i d’acceptació.</li>
+          <li><a href="#">3.4 Planificació i disseny de proves</a><br>
+            📘 Elaborar casos de prova efectius que cobreixin la major part de les funcionalitats del sistema.</li>
+          <li><a href="#">3.5 Execució i registre de resultats</a><br>
+            📘 Registrar resultats de proves, identificar regressions i comunicar errors.</li>
+          <li><a href="#">3.6 Eines de proves automatitzades</a><br>
+            📘 Introducció a JUnit, PyTest i altres marcs de proves per a l’automatització del procés.</li>
+          <li><a href="#">3.7 Documentació i millora contínua</a><br>
+            📘 Integrar els resultats de proves en la documentació tècnica i establir processos de revisió de qualitat.
+          </li>
+        </ul>
+        <blockquote><strong>Fil conductor del Tema 3 al Tema 4:</strong> Un cop dominada la depuració i la validació del
+          codi, l’alumne passa a aprendre a <em>optimitzar-lo</em>, gestionar-ne les versions i mantenir-ne la
+          coherència amb eines de control i integració contínua.</blockquote>
+      </details>
+    </section>
     <section id="tema4">
       <details>
         <summary><a href="tema4/index.html">🚀 Tema 4 (RA4): Optimització i Control de Versions</a></summary>
