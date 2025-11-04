@@ -1,29 +1,31 @@
 <!DOCTYPE html>
 <html lang="ca">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>🌐 Entorns de Desenvolupament · El Puig</title>
+  <title>🌐 Entorns de Desenvolupament · Índex del Mòdul</title>
   <link rel="stylesheet" href="index.css" />
 </head>
+
 <body>
   <!-- 🧭 BARRA SUPERIOR -->
   <header class="topbar">
-    <h1>🌐 Entorns de Desenvolupament</h1>
+    <h1>💡 Entorns de Desenvolupament · Institut Puig Castellar</h1>
     <nav>
       <a href="tabla_contenido.html">📚 Taula de continguts</a>
-      <a href="#" onclick="scrollToSection('temes')">Temes</a>
-      <a href="#" onclick="scrollToSection('recursos')">Recursos</a>
-      <a href="#" onclick="scrollToSection('contacte')">Contacte</a>
+      <a href="#temes">Temes</a>
+      <a href="#recursos">Recursos</a>
+      <a href="#contacte">Contacte</a>
     </nav>
   </header>
 
   <!-- 🌈 HERO -->
   <section class="hero">
     <div class="hero-content">
-      <h2>Benvingut/da al Mòdul · Entorns de Desenvolupament</h2>
-      <p>Explora els temes, consulta el temari i posa en pràctica els teus coneixements.</p>
-      <button class="btn" onclick="scrollToSection('temes')">Comença ara 🚀</button>
+      <h2>Benvingut/da al Mòdul <em>Entorns de Desenvolupament</em> 💡</h2>
+      <p>Aprèn a treballar com un professional del programari: planifica, dissenya, prova i documenta.</p>
+      <a href="tabla_contenido.html" class="btn">Veure índex complet 📘</a>
     </div>
   </section>
 
@@ -32,33 +34,45 @@
     <h2>📘 Temes del mòdul</h2>
     <div class="grid">
       <div class="card">
-        <h3>💡 Tema 1 — Introducció al desenvolupament</h3>
-        <p>Procés, fases i bones pràctiques de programari.</p>
-        <a href="tema1/index.html" class="btn">Entrar</a>
+        <h3>ⓘ Tema 0 — Introducció i Metodologia</h3>
+        <p>Marc normatiu, competències i eines del mòdul.</p>
+        <a href="tema0/index.html" class="btn">Entrar al Tema 0</a>
       </div>
 
       <div class="card">
-        <h3>🧩 Tema 2 — Control de versions i GitHub</h3>
-        <p>Aprèn a gestionar projectes amb Git i GitHub.</p>
-        <a href="tema2/index.html" class="btn">Entrar</a>
+        <h3>🌐 Tema 1 — Fonaments i Fases del Desenvolupament</h3>
+        <p>Procés complet de creació de programari i models de cicle de vida.</p>
+        <a href="tema1/index.html" class="btn">Entrar al Tema 1</a>
       </div>
 
       <div class="card">
-        <h3>⚙️ Tema 3 — Entorns de desenvolupament (IDE)</h3>
-        <p>Domina Visual Studio Code, Android Studio i més.</p>
-        <a href="tema3/index.html" class="btn">Entrar</a>
+        <h3>💻 Tema 2 — Entorns Integrats de Desenvolupament (IDE)</h3>
+        <p>Configura i domina VS Code, Android Studio i altres entorns professionals.</p>
+        <a href="tema2/index.html" class="btn">Entrar al Tema 2</a>
       </div>
 
       <div class="card">
-        <h3>🧠 Tema 4 — Depuració i proves</h3>
-        <p>Descobreix com trobar i corregir errors de manera eficient.</p>
-        <a href="tema4/index.html" class="btn">Entrar</a>
+        <h3>🧠 Tema 3 — Depuració i Proves</h3>
+        <p>Identifica, comprova i soluciona errors en projectes reals.</p>
+        <a href="tema3/index.html" class="btn">Entrar al Tema 3</a>
       </div>
 
       <div class="card">
-        <h3>🚀 Tema 5 — Publicació i manteniment</h3>
-        <p>Publica, actualitza i optimitza el teu programari real.</p>
-        <a href="tema5/index.html" class="btn">Entrar</a>
+        <h3>🚀 Tema 4 — Optimització i Control de Versions</h3>
+        <p>Refactorització, GitHub i integració contínua.</p>
+        <a href="tema4/index.html" class="btn">Entrar al Tema 4</a>
+      </div>
+
+      <div class="card">
+        <h3>📊 Tema 5 — Modelatge UML I (Diagrames de Classes)</h3>
+        <p>Representació estructural del programari mitjançant UML.</p>
+        <a href="tema5/index.html" class="btn">Entrar al Tema 5</a>
+      </div>
+
+      <div class="card">
+        <h3>🧩 Tema 6 — Modelatge UML II (Comportament)</h3>
+        <p>Casos d’ús, seqüències, activitats i diagrames d’estats.</p>
+        <a href="tema6/index.html" class="btn">Entrar al Tema 6</a>
       </div>
     </div>
   </main>
@@ -67,19 +81,22 @@
   <section id="recursos" class="resources">
     <h2>🧰 Recursos útils</h2>
     <ul>
-      <li><a href="tabla_contenido.html">📚 Veure taula completa de continguts</a></li>
+      <li><a href="tabla_contenido.html">📚 Taula completa de continguts</a></li>
       <li><a href="https://git-scm.com/" target="_blank">📘 Documentació oficial de Git</a></li>
       <li><a href="https://code.visualstudio.com/" target="_blank">💻 Visual Studio Code</a></li>
       <li><a href="https://developer.mozilla.org/" target="_blank">🌐 MDN Web Docs</a></li>
+      <li><a href="https://plantuml.com/" target="_blank">🧩 Eina UML online</a></li>
     </ul>
   </section>
 
   <!-- 📬 FOOTER -->
   <footer id="contacte" class="footer">
-    <p>💡 Projecte docent d'<strong>Alejandro Salido</strong> — Institut Puig Castellar</p>
+    <p>© 2025-2026 · Institut Puig Castellar · <strong>Entorns de Desenvolupament</strong></p>
+    <p><em>"Bazinga! 🤓 Keep calm and commit often."</em></p>
     <p>🔗 <a href="https://github.com/asalido2-cell/entorns_elpuig" target="_blank">Veure al GitHub</a></p>
   </footer>
 
   <script src="index.js"></script>
 </body>
+
 </html>
