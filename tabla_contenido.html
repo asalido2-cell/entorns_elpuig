@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Índex del Mòdul: Entorns de Desenvolupament 💡</title>
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg: #f8fafc;
+  --fg: #1e293b;
+  --accent: #2563eb;
+  --card-bg: #ffffffcc;
+  --border: #d1d5db;
+  --shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #0f172a;
+    --fg: #e2e8f0;
+    --accent: #60a5fa;
+    --card-bg: #1e293bcc;
+    --border: #334155;
+    --shadow: 0 4px 15px rgba(0,0,0,0.5);
+  }
+}
+body {
+  font-family:'Open Sans',sans-serif;
+  background-color:var(--bg);
+  color:var(--fg);
+  margin:0;
+  overflow-x:hidden;
+}
+canvas#matrix {
+  position:fixed;top:0;left:0;width:100%;height:100%;
+  z-index:-1;background:linear-gradient(180deg,var(--bg),var(--bg));
+}
+
+/* 💡 Capçalera fixa */
+header.fixed-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  text-align: center;
+  background: linear-gradient(90deg, #2563eb, #7c3aed);
+  color: white;
+  padding: 14px 0;
+  z-index: 20;
+  box-shadow: 0 4px 14px rgba(0,0,0,0.25);
+  opacity: 0;
+  animation: fadeIn 1.2s ease forwards;
+}
+header.fixed-header h1 {
+  margin: 0;
+  font-size: 1.5em;
+  letter-spacing: 0.5px;
+}
+header.fixed-header p {
+  margin: 2px 0 0 0;
+  font-size: 0.9em;
+  color: #e0e7ff;
+}
+
+/* SVG separador animat */
+svg.separator {
+  position: fixed;
+  top: 70px;
+  left: 0;
+  width: 100%;
+  height: 20px;
+  z-index: 19;
+}
+svg.separator path {
+  fill: url(#gradient);
+  opacity: 0.8;
+}
+
+/* 📘 Menú fix sota la capçalera */
+nav {
+  position: fixed;
+  top: 85px;
+  left: 0;
+  width: 100%;
+  background: var(--card-bg);
+  backdrop-filter: blur(8px);
+  box-shadow: var(--shadow);
+  display: flex;
+  justify-content: center;
+  gap: 0.8rem;
+  padding: 0.6rem;
+  border-bottom: 1px solid var(--border);
+  z-index: 10;
+}
+nav a {
+  text-decoration: none;
+  color: var(--accent);
+  font-weight: 600;
+  padding: 6px 12px;
+  border-radius: 8px;
+  transition: 0.3s;
+}
+nav a:hover {
+  background: var(--accent);
+  color: white;
+}
+
+main {
+  max-width: 900px;
+  margin: 180px auto 40px auto;
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  box-shadow: var(--shadow);
+  padding: 24px 30px;
+}
+
+/* ✨ Fade i estructura */
+details {
+  margin: 1rem 0;
+  border-left: 5px solid var(--accent);
+  border-radius: 6px;
+  background: var(--bg);
+  box-shadow: var(--shadow);
+  padding: 10px 18px;
+  opacity: 0;
+  transform: translateY(10px);
+  animation: fadeIn 0.8s ease forwards;
+}
+details summary {
+  font-weight: bold;
+  cursor: pointer;
+  font-size: 1.05em;
+  color: var(--accent);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+details ul { list-style: none; padding-left: 10px; }
+details li { margin: .3em 0; }
+details li a { color: var(--accent); text-decoration: none; font-weight: 600; }
+details li a:hover { text-decoration: underline; }
+blockquote {
+  background: rgba(255,255,0,.1);
+  border-left: 4px solid var(--accent);
+  padding: 8px 12px;
+  border-radius: 4px;
+  font-size: .9em;
+  margin-top: .5em;
+}
+footer {
+  text-align: center;
+  padding: 16px;
+  font-size: .85em;
+  color: var(--accent);
+}
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+</style>
+</head>
+<body>
+<canvas id="matrix"></canvas>
+
+<!-- 🔝 Capçalera fixa -->
+<header class="fixed-header">
+  <h1>ÍNDEX DEL MÒDUL: ENTORNS DE DESENVOLUPAMENT 💡</h1>
+  <p>DAW | DAM – Curs 2025/2026</p>
+</header>
+
+<!-- 🌈 Separador animat -->
+<svg class="separator" viewBox="0 0 1440 80" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="gradient" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#2563eb"/>
+      <stop offset="100%" stop-color="#7c3aed"/>
+    </linearGradient>
+  </defs>
+  <path d="M0,32 C480,80 960,0 1440,48 L1440,80 L0,80 Z"></path>
+</svg>
+
+<!-- 📘 Menú fix sota capçalera -->
+<nav>
+  <a href="#tema0">Tema 0</a>
+  <a href="#tema1">Tema 1</a>
+  <a href="#tema2">Tema 2</a>
+  <a href="#tema3">Tema 3</a>
+  <a href="#tema4">Tema 4</a>
+  <a href="#tema5">Tema 5</a>
+  <a href="#tema6">Tema 6</a>
+</nav>
+
+<main>
+<!-- 🧱 CONTINGUT (Temes 0–3, ampliats) -->
+<section>
+<h2>Què és Entorns de Desenvolupament? El Taller del Programador 🛠️</h2>
+<p>Aquest mòdul proporciona la base per convertir l’estudiant en un veritable professional del desenvolupament de programari. L’assignatura no tracta només de programar, sinó de fer-ho seguint criteris de qualitat, eficiència i treball col·laboratiu. Els alumnes aprendran a entendre el procés complet de creació d’un projecte tecnològic, des de la planificació fins a la documentació i les proves finals.</p>
+<p>Durant el curs es fomentarà la cultura de la qualitat del codi, la revisió d’errors mitjançant proves unitàries, la refactorització contínua i la gestió professional del projecte amb eines com Git i UML. L’objectiu és desenvolupar competències tècniques, organitzatives i ètiques que permetin treballar en entorns reals de desenvolupament.</p>
+<blockquote>🎯 El "Taller del Programador" és on es construeixen les eines essencials: planificar abans d’executar, dissenyar abans de construir i provar abans de lliurar.</blockquote>
+<blockquote>👉 Recordatori: tots els títols i subtítols són enllaços actius. Cliqueu per navegar!</blockquote>
+</section>
+
+<section id="tema0">
+<details open>
+<summary>ⓘ Tema 0: Introducció i Metodologia del Mòdul</summary>
+<p><strong>Objectiu:</strong> Entendre el marc normatiu i els criteris d’avaluació del mòdul professional, així com les competències i eines utilitzades.</p>
+<ul>
+<li><a href="#">0.1 Control de Gestió del Document (Versions, Dades)</a><br>
+📘 Es treballarà com gestionar i versionar documentació tècnica utilitzant bones pràctiques professionals. L’alumne aprendrà a identificar la importància de la traçabilitat i la validació documental en projectes reals.</li>
+<li><a href="#">0.2 Competències i Objectius Generals del MP</a><br>
+📘 Es detallen les competències tècniques, transversals i personals necessàries per al desenvolupador modern. Es treballaran conceptes com la responsabilitat, el treball en equip i la comunicació tècnica.</li>
+<li><a href="#">0.3 Durada, Avaluació i Qualificació del Mòdul</a><br>
+📘 Es definiran els criteris d’avaluació, la ponderació de proves i activitats, així com el paper de l’avaluació contínua. Es reflexionarà sobre el compromís i l’autogestió de l’aprenentatge.</li>
+<li><a href="#">0.4 Estratègies Metodològiques i Recursos (Moodle, VDI, Anglès)</a><br>
+📘 Es presentaran les eines digitals (Moodle, IsardVDI, GitHub) i metodologies actives com l’aprenentatge basat en projectes, amb recursos en anglès tècnic per fomentar la competència lingüística professional.</li>
+</ul>
+<blockquote>🔗 Hilo conductor: aquest tema estableix la base metodològica i estructural que permetrà seguir amb eficàcia la resta del mòdul.</blockquote>
+</details>
+</section>
+
+<section id="tema1">
+<details>
+<summary>🌐 Tema 1 (RA1): Fonaments i Fases del Desenvolupament de Programari</summary>
+<p><strong>Objectiu:</strong> Comprendre els principis bàsics del desenvolupament de programari i el cicle de vida que segueix una aplicació des de la idea fins al seu ús final.</p>
+<ul>
+<li><a href="#">1.1 Concepte de programa informàtic i relació amb el maquinari</a><br>
+📘 Es defineixen els elements essencials del maquinari i del programari, explicant la seva interrelació i com les ordres codificades arriben al processador. Es treballaran exemples de codi per visualitzar aquesta connexió.</li>
+<li><a href="#">1.2 Codi font, objecte i executable; virtualització</a><br>
+📘 S’analitza el procés que transforma el codi llegible per l’humà en instruccions màquina. Es presenten conceptes de compilació, linking i execució en entorns virtualitzats.</li>
+<li><a href="#">1.3 Tipus de llenguatges de programació i paradigmes</a><br>
+📘 L’alumne coneixerà els paradigmes més importants: estructurat, orientat a objectes, funcional i declaratiu. Es reflexionarà sobre com aquests afecten la manera d’abordar la resolució de problemes.</li>
+<li><a href="#">1.4 Característiques dels llenguatges més difosos</a><br>
+📘 Es comparen llenguatges com Java, Python, C++, JavaScript i Kotlin segons l’ús, l’eficiència i el tipus d’aplicacions que permeten desenvolupar.</li>
+<li><a href="#">1.5 Models del cicle de vida del programari</a><br>
+📘 Es revisen els models de cascada, espiral, incremental i prototipat per entendre com adaptar el procés a les necessitats del client i de l’equip de desenvolupament.</li>
+<li><a href="#">1.6 Fases del desenvolupament d'una aplicació</a><br>
+📘 Es detallen les etapes des de l’anàlisi de requisits fins al manteniment. L’alumne entendrà la importància d’una bona planificació per garantir la qualitat del resultat.</li>
+<li><a href="#">1.7 Procés d'obtenció de codi executable</a><br>
+📘 Es mostra el camí complet des de l’escriptura del codi fins a l’obtenció del binari executable, incloent proves i validacions intermèdies.</li>
+<li><a href="#">1.8 Programació mòbil</a><br>
+📘 Introducció a la creació d’aplicacions per a dispositius mòbils. Es debat la diferència entre desenvolupament nadiu i híbrid.</li>
+<li><a href="#">1.9 Aspectes legals del desenvolupament</a><br>
+📘 Es tracten temes de llicències, propietat intel·lectual i drets d’autor. L’alumne aprendrà bones pràctiques per evitar vulneracions legals.</li>
+<li><a href="#">1.10 Metodologies àgils (Scrum, Kanban, TDD)</a><br>
+📘 Es presenta la filosofia Agile i els seus beneficis per adaptar-se a canvis. Es treballarà un exemple pràctic de tauler Kanban.</li>
+<li><a href="#">1.11 Activitats pràctiques del Tema 1</a><br>
+📘 Aplicació d’un cas complet: des del diagrama de flux fins a la implementació inicial del projecte.</li>
+</ul>
+<blockquote><strong>Fil conductor del Tema 1 al Tema 2:</strong> Després d’estudiar el procés i els models, es passa a treballar amb les eines professionals (IDE) per portar la teoria a la pràctica.</blockquote>
+</details>
+</section>
+
+<section id="tema2">
+<details>
+<summary>💻 Tema 2 (RA2): Entorns Integrats de Desenvolupament (IDE)</summary>
+<p><strong>Objectiu:</strong> Dominar les funcions essencials dels IDE per configurar, editar, depurar i automatitzar el desenvolupament.</p>
+<ul>
+<li><a href="#">2.1 Funcions d'un entorn de desenvolupament</a><br>
+📘 Es descriuen els components principals d’un IDE i com aquests afavoreixen la productivitat.</li>
+<li><a href="#">2.2 Instal·lació d'un entorn (lliures i propietaris)</a><br>
+📘 Es comparen entorns populars, analitzant els avantatges i adaptacions per a cada tipus de projecte.</li>
+<li><a href="#">2.3 Ús bàsic d'un entorn de desenvolupament</a><br>
+📘 Es mostren les funcionalitats bàsiques: creació de projectes, edició i execució de codi.</li>
+<li><a href="#">2.4 Personalització de l'entorn</a><br>
+📘 Es treballen temes, extensions i dreceres per adaptar l’IDE a les preferències individuals.</li>
+<li><a href="#">2.5 Edició de programes</a><br>
+📘 Es practiquen tècniques avançades d’edició que milloren la qualitat del codi.</li>
+<li><a href="#">2.6 Generació d'executables</a><br>
+📘 Es mostren els processos d’empaquetat i exportació multiplataforma.</li>
+<li><a href="#">2.7 Eines i automatització de tasques</a><br>
+📘 S’introdueixen Maven i Gradle com a eines clau en el control del cicle de construcció.</li>
+</ul>
+<blockquote><strong>Fil conductor del Tema 2 al Tema 3:</strong> Després de dominar l’entorn, el següent repte és verificar i depurar el codi per assegurar-ne la qualitat.</blockquote>
+</details>
+</section>
+
+<section id="tema4">
+<details>
+<summary>🚀 Tema 4 (RA4): Optimització, Control de Versions i Integració Contínua</summary>
+<p><strong>Objectiu:</strong> Optimitzar el codi mitjançant refactorització, controlar-ne les versions i utilitzar eines d’integració contínua.</p>
+<ul>
+<li><a href="#">4.1 Refactorització: concepte, limitacions i patrons</a></li>
+<li><a href="#">4.2 Proves associades a la refactorització</a></li>
+<li><a href="#">4.3 Analitzadors de codi (LINT, SonarQube)</a></li>
+<li><a href="#">4.4 Control de versions</a></li>
+<li><a href="#">4.5 Repositoris remots i desenvolupament col·laboratiu</a></li>
+<li><a href="#">4.6 Documentació: ús de comentaris i alternatives</a></li>
+<li><a href="#">4.7 Integració contínua</a></li>
+</ul>
+<blockquote><strong>Fil conductor del Tema 4 al Tema 5:</strong> Ara preparem el disseny estructural abans de programar: UML i diagrames de classes.</blockquote>
+</details>
+</section>
+
+<section id="tema5">
+<details>
+<summary>📊 Tema 5 (RA5): Modelatge amb UML I – Diagrames de Classes</summary>
+<p><strong>Objectiu:</strong> Generar i interpretar diagrames UML de classes aplicant conceptes de POO.</p>
+<ul>
+<li><a href="#">5.1 Conceptes de POO: Classes, Atributs, Mètodes i Visibilitat</a></li>
+<li><a href="#">5.2 Objectes: Instanciació</a></li>
+<li><a href="#">5.3 Relacions: Associació, Navegabilitat, Multiplicitat</a></li>
+<li><a href="#">5.4 Relacions: Herència, Composició, Agregació, Realització i Dependència</a></li>
+<li><a href="#">5.5 Notació dels diagrames de classes</a></li>
+<li><a href="#">5.6 Eines per a l’elaboració de diagrames</a></li>
+<li><a href="#">5.7 Generació automàtica de codi i Enginyeria Inversa</a></li>
+</ul>
+<blockquote><strong>Fil conductor del Tema 5 al Tema 6:</strong> Després del disseny estructural, ve el comportamental: diagrames de seqüència i casos d’ús.</blockquote>
+</details>
+</section>
+
+<section id="tema6">
+<details>
+<summary>🧩 Tema 6 (RA6): Modelatge amb UML II – Diagrames de Comportament</summary>
+<p><strong>Objectiu:</strong> Generar i interpretar diagrames UML de comportament (casos d’ús, seqüència, activitat i estats).</p>
+<ul>
+<li><a href="#">6.1 Tipus de diagrames de comportament i camp d’aplicació</a></li>
+<li><a href="#">6.2 Diagrama de Casos d’Ús (Actors, Escenari, Comunicació)</a></li>
+<li><a href="#">6.3 Diagrames d’Interacció: Seqüència</a></li>
+<li><a href="#">6.4 Diagrames d’Interacció: Comunicació</a></li>
+<li><a href="#">6.5 Diagrama d’Activitat i Diagrama d’Estats</a></li>
+</ul>
+<blockquote>👉 Tanquem el cicle: del codi (Tema 1), als entorns (Tema 2), a les proves (Tema 3), a l’optimització (Tema 4), al disseny estructural (Tema 5) i finalment al disseny del comportament (Tema 6).</blockquote>
+</details>
+</section>
+
+<footer>
+© 2025-2026 Institut Puig Castellar – Material Didàctic.<br>
+<em>"Bazinga! 🤓 Keep calm and commit often." – The Big Bang Code Edition</em>
+</footer>
+</main>
+
+<script>
+const canvas=document.getElementById("matrix"),ctx=canvas.getContext("2d");
+function resize(){canvas.height=window.innerHeight;canvas.width=window.innerWidth;}
+resize();window.addEventListener("resize",resize);
+const chars="01",fontSize=14;let cols=canvas.width/fontSize;const drops=Array(Math.floor(cols)).fill(1);
+function draw(){
+ ctx.fillStyle=getComputedStyle(document.documentElement).getPropertyValue("--bg");
+ ctx.fillRect(0,0,canvas.width,canvas.height);
+ ctx.fillStyle=getComputedStyle(document.documentElement).getPropertyValue("--accent");
+ ctx.font=fontSize+"px monospace";
+ for(let i=0;i<drops.length;i++){
+   const text=chars[Math.floor(Math.random()*chars.length)];
+   ctx.fillText(text,i*fontSize,drops[i]*fontSize);
+   if(drops[i]*fontSize>canvas.height&&Math.random()>0.975)drops[i]=0;
+   drops[i]++;
+ }
+}
+setInterval(draw,50);
+</script>
+</body>
+</html>

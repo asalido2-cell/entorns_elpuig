@@ -1,465 +1,85 @@
-<!DOCTYPE html> 
+<!DOCTYPE html>
 <html lang="ca">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>MP0612 · Desenvolupament web en entorn client</title>
-  <style>
-    body {
-      font-family: 'Segoe UI', Roboto, sans-serif;
-      margin: 0;
-      background-color: #f5fbfb;
-      color: #013243;
-      line-height: 1.6;
-      overflow-x: hidden;
-    }
-    header {
-      position: relative;
-      overflow: hidden;
-      background: linear-gradient(135deg, #007b83, #00a8a8);
-      color: white;
-      text-align: center;
-      padding: 4rem 1rem 6rem 1rem;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.25);
-      animation: fadeInDown 1.2s ease;
-    }
-    header::before {
-      content: "";
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="%23f5fbfb" fill-opacity="0.3" d="M0,160L48,154.7C96,149,192,139,288,138.7C384,139,480,149,576,138.7C672,128,768,96,864,101.3C960,107,1056,149,1152,176C1248,203,1344,213,1392,218.7L1440,224L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path></svg>');
-      background-size: cover;
-      background-repeat: no-repeat;
-      background-position: bottom;
-      opacity: 0.3;
-      z-index: 0;
-    }
-    header h1, header h2, header p {
-      position: relative;
-      z-index: 1;
-    }
-    header h1 {
-      margin: 0;
-      font-size: 2.6rem;
-    }
-    header p {
-      margin: 0.3rem 0;
-      font-size: 1.15rem;
-    }
-    header h2 {
-      margin-top: 1rem;
-      font-weight: 500;
-      font-size: 1.6rem;
-    }
-
-    @keyframes fadeInDown {
-      from { opacity: 0; transform: translateY(-40px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-
-    nav {
-      position: sticky;
-      top: 0;
-      background: #00a8a8;
-      display: flex;
-      justify-content: center;
-      gap: 1rem;
-      padding: 1rem;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.15);
-      z-index: 10;
-    }
-    nav a {
-      color: white;
-      text-decoration: none;
-      font-weight: bold;
-      background: rgba(255,255,255,0.1);
-      padding: 0.6rem 1.2rem;
-      border-radius: 8px;
-      transition: all 0.3s ease;
-    }
-    nav a:hover {
-      background: white;
-      color: #007b83;
-      transform: scale(1.05);
-      box-shadow: 0 4px 10px rgba(0,0,0,0.15);
-    }
-    nav a:active {
-      transform: scale(0.95) rotate(-2deg);
-      background: #005c5c;
-      color: #f5fbfb;
-    }
-
-    section {
-      max-width: 1000px;
-      margin: 4rem auto;
-      background: white;
-      padding: 2.5rem;
-      border-radius: 15px;
-      box-shadow: 0 6px 18px rgba(0,0,0,0.1);
-      opacity: 0;
-      transform: translateY(40px);
-      transition: all 0.8s ease-out;
-    }
-    section.visible {
-      opacity: 1;
-      transform: translateY(0);
-    }
-
-    h2 {
-      color: #007b83;
-      border-bottom: 2px solid #00a8a8;
-      padding-bottom: 0.5rem;
-    }
-    ul {
-      list-style: none;
-      padding: 0;
-    }
-    ul li { margin-bottom: 1rem; }
-    a.subtema {
-      color: #007b83;
-      text-decoration: none;
-      font-weight: 600;
-    }
-    a.subtema:hover { text-decoration: underline; }
-
-    .back-top {
-      position: fixed;
-      bottom: 20px;
-      right: 20px;
-      background: #00a8a8;
-      color: white;
-      border: none;
-      border-radius: 50%;
-      width: 50px;
-      height: 50px;
-      font-size: 1.5rem;
-      cursor: pointer;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.3);
-      transition: all 0.3s;
-    }
-    .back-top:hover { background: #007b83; transform: scale(1.1) rotate(10deg); }
-
-    footer {
-      text-align: center;
-      background: #013243;
-      color: white;
-      padding: 2rem 1rem;
-      margin-top: 3rem;
-      font-size: 0.9rem;
-    }
-  </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>🌐 Entorns de Desenvolupament · El Puig</title>
+  <link rel="stylesheet" href="index.css" />
 </head>
 <body>
-  <header>
-    <h1>Institut Puig Castellar</h1>
-    <p>Cicle Formatiu de Grau Superior · Desenvolupament d'Aplicacions Web</p>
-    <h2>Mòdul professional 0612 · Desenvolupament web en entorn client</h2>
+  <!-- 🧭 BARRA SUPERIOR -->
+  <header class="topbar">
+    <h1>🌐 Entorns de Desenvolupament</h1>
+    <nav>
+      <a href="tabla_contenido.html">📚 Taula de continguts</a>
+      <a href="#" onclick="scrollToSection('temes')">Temes</a>
+      <a href="#" onclick="scrollToSection('recursos')">Recursos</a>
+      <a href="#" onclick="scrollToSection('contacte')">Contacte</a>
+    </nav>
   </header>
 
-  <nav>
-    <a href="#tema1">Tema 1</a>
-    <a href="#tema2">Tema 2</a>
-    <a href="#tema3">Tema 3</a>
-    <a href="#tema4">Tema 4</a>
-    <a href="#tema5">Tema 5</a>
-    <a href="#tema6">Tema 6</a>
-    <a href="#tema7">Tema 7</a>
-  </nav>
-
-  <section id="intro">
-      <h2>Benvinguts al mòdul!</h2>
-    <p><strong>Com funciona aquest índex interactiu:</strong> 
-  A continuació trobaràs tots els temes del mòdul amb els seus objectius i subtemes. 
-  <u>Cada enllaç del tema</u> (tant els principals com els subtemes) està preparat per obrir directament la seva secció corresponent al Moodle en una pestanya nova.  
-  Només has de fer clic i… *warp!* 🚀 et transportarà al contingut complet del tema, amb activitats, materials i pràctiques.</p>
-
-  <p><em>Consell Jedi:</em> guarda aquest índex com a punt de partida del teu viatge — és la teva holocròn del codi. ✨</p>
-
-    <p><strong>Descripció general:</strong> Aquest mòdul introdueix els fonaments del desenvolupament web en entorn client. Treballarem amb JavaScript i TypeScript, aprendrem a manipular el DOM, gestionar esdeveniments, validar formularis, crear aplicacions dinàmiques i connectar-nos a APIs. En definitiva, ens formarem per construir interfícies web modernes, accessibles i reactives. 🌐</p>
-    <p><strong>Objectius del mòdul:</strong> Entendre la diferència entre client i servidor, escriure codi eficient i net, manipular contingut web dinàmicament, i implementar aplicacions interactives amb asincronia i bones pràctiques professionals. 🚀</p>
+  <!-- 🌈 HERO -->
+  <section class="hero">
+    <div class="hero-content">
+      <h2>Benvingut/da al Mòdul · Entorns de Desenvolupament</h2>
+      <p>Explora els temes, consulta el temari i posa en pràctica els teus coneixements.</p>
+      <button class="btn" onclick="scrollToSection('temes')">Comença ara 🚀</button>
+    </div>
   </section>
 
-  <section id="tema1">
-    <h2>Tema 1 – RA1: Selecció d’arquitectures i tecnologies de programació sobre clients web</h2>
-    <p><strong>Durada:</strong> 6 h</p>
-    <p><strong>Objectiu general:</strong> Comprendre les diferències entre l’execució client i servidor, i conèixer les principals tecnologies del desenvolupament web client.</p>
-    <p>En aquest primer tema introduirem les bases de com funciona una aplicació web: què passa al client i què al servidor. Ens familiaritzarem amb les eines i tecnologies essencials, començant a configurar el nostre entorn de desenvolupament com tot bon Jedi del codi. ⚔️</p>
+  <!-- 📘 SECCIÓ TEMES -->
+  <main id="temes" class="content">
+    <h2>📘 Temes del mòdul</h2>
+    <div class="grid">
+      <div class="card">
+        <h3>💡 Tema 1 — Introducció al desenvolupament</h3>
+        <p>Procés, fases i bones pràctiques de programari.</p>
+        <a href="tema1/index.html" class="btn">Entrar</a>
+      </div>
+
+      <div class="card">
+        <h3>🧩 Tema 2 — Control de versions i GitHub</h3>
+        <p>Aprèn a gestionar projectes amb Git i GitHub.</p>
+        <a href="tema2/index.html" class="btn">Entrar</a>
+      </div>
+
+      <div class="card">
+        <h3>⚙️ Tema 3 — Entorns de desenvolupament (IDE)</h3>
+        <p>Domina Visual Studio Code, Android Studio i més.</p>
+        <a href="tema3/index.html" class="btn">Entrar</a>
+      </div>
+
+      <div class="card">
+        <h3>🧠 Tema 4 — Depuració i proves</h3>
+        <p>Descobreix com trobar i corregir errors de manera eficient.</p>
+        <a href="tema4/index.html" class="btn">Entrar</a>
+      </div>
+
+      <div class="card">
+        <h3>🚀 Tema 5 — Publicació i manteniment</h3>
+        <p>Publica, actualitza i optimitza el teu programari real.</p>
+        <a href="tema5/index.html" class="btn">Entrar</a>
+      </div>
+    </div>
+  </main>
+
+  <!-- 🧰 SECCIÓ RECURSOS -->
+  <section id="recursos" class="resources">
+    <h2>🧰 Recursos útils</h2>
     <ul>
-      <li><a href="#" class="subtema" target="_blank">1.1. Model d’execució client vs servidor</a><br>Analitzarem el funcionament del model client-servidor i les seves interaccions, identificant quin paper juga cada component.</li>
-      <li><a href="#" class="subtema" target="_blank">1.2. Capacitats i limitacions dels navegadors</a><br>Explorarem el poder (i els límits) dels navegadors moderns, i com gestionar compatibilitats i rendiment.</li>
-      <li><a href="#" class="subtema" target="_blank">1.3. Llenguatges d’etiquetes i programació web: HTML, CSS i JavaScript</a><br>Farem un recorregut per la Santíssima Trinitat del web: estructura, estil i lògica. 🧙‍♂️</li>
-      <li><a href="#" class="subtema" target="_blank">1.4. Eines i entorns de desenvolupament (VS Code, Chrome DevTools)</a><br>Configurarem entorns de treball i aprendrem a depurar amb eines professionals.</li>
-      <li><a href="#" class="subtema" target="_blank">1.5. Integració HTML + JavaScript</a><br>Entendrem com interactuen els fitxers HTML i JS per crear comportament dinàmic.</li>
-      <li><a href="#" class="subtema" target="_blank">1.6. Frameworks i llibreries actuals (React, Vue, Svelte...)</a><br>Una mirada cap al futur del desenvolupament client amb frameworks populars.</li>
-      <li><a href="#" class="subtema" target="_blank">1.7. Depuració i proves en entorns client</a><br>Aprendrem a detectar i resoldre errors com veritables detectius del codi. 🕵️‍♀️</li>
+      <li><a href="tabla_contenido.html">📚 Veure taula completa de continguts</a></li>
+      <li><a href="https://git-scm.com/" target="_blank">📘 Documentació oficial de Git</a></li>
+      <li><a href="https://code.visualstudio.com/" target="_blank">💻 Visual Studio Code</a></li>
+      <li><a href="https://developer.mozilla.org/" target="_blank">🌐 MDN Web Docs</a></li>
     </ul>
   </section>
-  <!-- ============================= -->
-<!-- TEMES 2 A 7 -->
-<!-- ============================= -->
 
-<section id="tema2">
-  <h2>Tema 2 – RA2: Escriptura de sentències simples i sintaxi del llenguatge</h2>
-  <p><strong>Durada:</strong> 10 h</p>
-  <p><strong>Objectiu general:</strong> Dominar la sintaxi bàsica de JavaScript i crear scripts senzills que s’executin correctament al navegador.</p>
-
-  <ul>
-    <li>
-      <a href="#" class="subtema" target="_blank">2.1. Variables, constants i tipus de dades</a><br>
-      Aprendrem a declarar variables, constants i identificar els principals tipus de dades en JavaScript (string, number, boolean, object, null i undefined). 
-      Es realitzaran exemples pràctics de declaració i conversió de tipus.
-    </li>
-    <li>
-      <a href="#" class="subtema" target="_blank">2.2. Operadors (aritmètics, lògics, de comparació i assignació)</a><br>
-      Es treballaran els operadors fonamentals del llenguatge: aritmètics (+, -, *, /), de comparació (==, ===, !=, <, >) i lògics (&&, ||, !), 
-      així com els d’assignació. Es faran exercicis per comprendre el flux de valors i resultats.
-    </li>
-    <li>
-      <a href="#" class="subtema" target="_blank">2.3. Estructures de decisió (if, else, switch)</a><br>
-      Analitzarem com prendre decisions en un programa mitjançant condicions, utilitzant if, else i switch. 
-      Crearem mini-programes amb resultats diferents segons les dades d’entrada de l’usuari.
-    </li>
-    <li>
-      <a href="#" class="subtema" target="_blank">2.4. Estructures iteratives (for, while, do while)</a><br>
-      Aprendrem a repetir instruccions amb bucles controlats i condicionats, aplicant-los a exercicis de càlcul, recorregut de dades i validació de valors.
-    </li>
-    <li>
-      <a href="#" class="subtema" target="_blank">2.5. Comentaris, bones pràctiques i estil de codi (JSDoc)</a><br>
-      Introduirem la importància dels comentaris i l’escriptura clara de codi. 
-      Es treballarà amb l’estil recomanat d’indentació, noms de variables i documentació amb JSDoc per facilitar la lectura i manteniment del projecte.
-    </li>
-  </ul>
-</section>
-
-
-<!-- ============================= -->
-<!-- TEMA 3 -->
-<!-- ============================= -->
-<section id="tema3">
-  <h2>Tema 3 – RA3: Ús dels objectes predefinits del llenguatge</h2>
-  <p><strong>Durada:</strong> 12 h</p>
-  <p><strong>Objectiu general:</strong> Utilitzar objectes natius i globals del navegador per interactuar amb l’usuari i manipular contingut.</p>
-
-  <ul>
-    <li>
-      <a href="#" class="subtema" target="_blank">3.1. Objectes natius: String, Number, Math, Date</a><br>
-      Propietats i mètodes bàsics dels objectes natius. Exercicis amb concatenació, càlculs i formats de data. Mini projecte: “Calculadora d’edat”.
-    </li>
-    <li>
-      <a href="#" class="subtema" target="_blank">3.2. Objectes globals: window, console, alert, prompt, confirm</a><br>
-      Ús de window, console, alert, prompt i confirm. Pràctiques d’entrada/sortida de dades i depuració. Exercici: “Test interactiu amb prompt()”.
-    </li>
-    <li>
-      <a href="#" class="subtema" target="_blank">3.3. Interacció amb l’usuari i finestres emergents</a><br>
-      Creació de finestres emergents amb window.open(). Comunicació entre finestres (parent/child). Exercici: “Missatge entre finestres”.
-    </li>
-    <li>
-      <a href="#" class="subtema" target="_blank">3.4. Emmagatzematge local (localStorage, sessionStorage)</a><br>
-      Ús de localStorage i sessionStorage. Guardar i recuperar preferències d’usuari. Exercici: “Selector de tema fosc/clar”.
-    </li>
-    <li>
-      <a href="#" class="subtema" target="_blank">3.5. Aprofundiment en mètodes avançats, depuració professional (try...catch) i documentació del codi</a><br>
-      Ús avançat d’objectes natius combinats (per exemple, Date + String). Gestió d’errors amb try...catch i throw. Creació de funcions amb objectes dins d’altres objectes. Introducció a mètodes interns (toString, valueOf, hasOwnProperty, etc.). Documentació amb JSDoc i bones pràctiques d’escriptura.
-    </li>
-  </ul>
-</section>
-
-<!-- ============================= -->
-<!-- TEMA 4 -->
-<!-- ============================= -->
-<section id="tema4">
-  <h2>Tema 4 – RA4: Programació amb estructures definides per l’usuari</h2>
-  <p><strong>Durada:</strong> 12 h</p>
-  <p><strong>Objectiu general:</strong> Crear funcions, col·leccions i objectes personalitzats aplicant conceptes bàsics d’orientació a objectes.</p>
-
-  <ul>
-    <li>
-      <a href="#" class="subtema" target="_blank">4.1. Funcions predefinides i definides per l’usuari</a><br>
-      Tipus de funcions: declarades, expressades i fletxa (arrow). Creació i ús de funcions pròpies per modularitzar el codi.
-    </li>
-    <li>
-      <a href="#" class="subtema" target="_blank">4.2. Paràmetres, valors de retorn i arrow functions</a><br>
-      Paràmetres, valors per defecte, retorns i scope. Funcions com a objectes i ús de callbacks.
-    </li>
-    <li>
-      <a href="#" class="subtema" target="_blank">4.3. Arrays i mètodes (map, filter, reduce)</a><br>
-      Creació, recorregut i manipulació d’arrays. Ús dels mètodes push, pop, splice, map, filter i reduce. Arrays multidimensionals i ordenació.
-    </li>
-    <li>
-      <a href="#" class="subtema" target="_blank">4.4. Objectes literals, constructors i mètodes</a><br>
-      Creació d’objectes literals i constructors. Propietats, mètodes i accés dinàmic. Ús de this, prototips i encapsulació.
-    </li>
-    <li>
-      <a href="#" class="subtema" target="_blank">4.5. Objectes definits per l’usuari</a><br>
-      Creació d’objectes personalitzats amb propietats i comportament propi per a cada projecte.
-    </li>
-    <li>
-      <a href="#" class="subtema" target="_blank">4.6. Classes i instàncies (POO bàsica)</a><br>
-      Conceptes d’objecte, classe i instància. Constructor(), super i herència simple. Definició de mètodes i propietats d’instància.
-    </li>
-    <li>
-      <a href="#" class="subtema" target="_blank">4.7. Patrons de disseny senzills (Factory, Module)</a><br>
-      Aplicació de patrons bàsics per estructurar el codi i millorar la reutilització (Factory, Module).
-    </li>
-    <li>
-      <a href="#" class="subtema" target="_blank">4.8. Tipus avançats en JavaScript (spread, destructuring, Object.keys, entries)</a><br>
-      Ús d’operadors spread, rest i destructuring. Manipulació d’objectes amb Object.keys, Object.entries i Object.assign.
-    </li>
-    <li>
-      <a href="#" class="subtema" target="_blank">4.9. Depuració i bones pràctiques de codi</a><br>
-      Aplicació de tècniques de depuració i bones pràctiques per assegurar un codi net, tipatge estàtic i mantenible.
-    </li>
-    <li>
-      <a href="#" class="subtema" target="_blank">4.10. Extensió TypeScript: tipatge, interfícies i compilació</a><br>
-      Introducció a TypeScript, creació de classes i interfícies, compilació i avantatges en mantenibilitat i depuració.
-    </li>
-  </ul>
-</section>
-
-<!-- ============================= -->
-<!-- TEMA 5 -->
-<!-- ============================= -->
-<section id="tema5">
-  <h2>Tema 5 – RA5: Desenvolupament d’aplicacions web interactives amb esdeveniments</h2>
-  <p><strong>Durada:</strong> 11 h</p>
-  <p><strong>Objectiu general:</strong> Implementar aplicacions web que reaccionin a les accions de l’usuari a través d’esdeveniments.</p>
-
-  <ul>
-    <li>
-      <a href="#" class="subtema" target="_blank">5.1. Introducció a addEventListener</a><br>
-      Tipus d’esdeveniments en JS (ratolí, teclat, formularis). Objecte event i propagació (bubbling i capturing). Assignació i eliminació de gestors d’esdeveniments.
-    </li>
-    <li>
-      <a href="#" class="subtema" target="_blank">5.2. Esdeveniments de ratolí i teclat (click, keydown, mousemove)</a><br>
-      Captura i resposta a esdeveniments de ratolí i teclat per crear interaccions dinàmiques com animacions o moviments.
-    </li>
-    <li>
-      <a href="#" class="subtema" target="_blank">5.3. Gestió de formularis i validació</a><br>
-      Captura d’esdeveniments submit, change, input. Validació de camps amb atributs HTML i patrons. Generació de missatges d’error i feedback visual.
-    </li>
-    <li>
-      <a href="#" class="subtema" target="_blank">5.4. Expressions regulars per validar dades</a><br>
-      Sintaxi bàsica d’expressions regulars (regex). Validació de correus, telèfons i contrasenyes amb expressions personalitzades.
-    </li>
-    <li>
-      <a href="#" class="subtema" target="_blank">5.5. Disseny d’interfícies accessibles i amb feedback visual</a><br>
-      Creació d’interfícies accessibles i usables amb retroalimentació visual i millora de l’experiència d’usuari.
-    </li>
-  </ul>
-</section>
-
-<!-- ============================= -->
-<!-- TEMA 6 -->
-<!-- ============================= -->
-<section id="tema6">
-  <h2>Tema 6 – RA6: Utilització del Model d’Objectes del Document (DOM)</h2>
-  <p><strong>Durada:</strong> 18 h</p>
-  <p><strong>Objectiu general:</strong> Manipular dinàmicament el contingut i l’estil d’una pàgina web amb el DOM.</p>
-
-  <ul>
-    <li>
-      <a href="#" class="subtema" target="_blank">6.1. Estructura del DOM i mètodes de selecció (getElementById, querySelector)</a><br>
-      Estructura jeràrquica del DOM (nodes, elements, atributs). Mètodes de selecció i recorregut de nodes. Propietats comunes.
-    </li>
-    <li>
-      <a href="#" class="subtema" target="_blank">6.2. Modificació d’atributs, continguts i estils (innerHTML, classList, style)</a><br>
-      Modificació d’atributs amb setAttribute, gestió d’estils i classes amb classList i style, actualització de contingut textual i HTML.
-    </li>
-    <li>
-      <a href="#" class="subtema" target="_blank">6.3. Creació i eliminació de nodes (createElement, appendChild, removeChild)</a><br>
-      Generació, inserció i eliminació d’elements. Construcció dinàmica de contingut. Aplicació pràctica: CRUD sobre DOM.
-    </li>
-    <li>
-      <a href="#" class="subtema" target="_blank">6.4. Compatibilitat multi-navegador</a><br>
-      Diferències entre navegadors en la implementació del DOM i bones pràctiques per assegurar compatibilitat.
-    </li>
-    <li>
-      <a href="#" class="subtema" target="_blank">6.5. Separació de capes (HTML/CSS/JS)</a><br>
-      Estructura organitzada del projecte amb separació d’estructura, estil i comportament.
-    </li>
-    <li>
-      <a href="#" class="subtema" target="_blank">6.6. Pràctica final: CRUD sobre DOM</a><br>
-      Aplicació completa amb creació, lectura, actualització i eliminació d’elements. Documentació i depuració final del projecte.
-    </li>
-  </ul>
-</section>
-
-<!-- ============================= -->
-<!-- TEMA 7 -->
-<!-- ============================= -->
-<section id="tema7">
-  <h2>Tema 7 – RA7: Desenvolupament d’aplicacions web dinàmiques amb comunicació asíncrona</h2>
-  <p><strong>Durada:</strong> 18 h</p>
-  <p><strong>Objectiu general:</strong> Implementar aplicacions web que intercanviïn dades amb el servidor mitjançant mecanismes asíncrons.</p>
-
-  <ul>
-    <li>
-      <a href="#" class="subtema" target="_blank">7.1. Comunicació asíncrona: concepte i avantatges</a><br>
-      Concepte d’asincronia i diferències amb execució síncrona. Peticions HTTP GET i POST per comunicar client i servidor.
-    </li>
-    <li>
-      <a href="#" class="subtema" target="_blank">7.2. Fetch API i XMLHttpRequest</a><br>
-      Comparació entre Fetch API i XMLHttpRequest. Creació de peticions, tractament de respostes i gestió d’errors.
-    </li>
-    <li>
-      <a href="#" class="subtema" target="_blank">7.3. Format JSON: parse i stringify</a><br>
-      Estructura i ús del format JSON. Conversió entre objectes JS i JSON. Lectura i visualització de dades remotes.
-    </li>
-    <li>
-      <a href="#" class="subtema" target="_blank">7.4. Actualització dinàmica del DOM amb dades remotes</a><br>
-      Inserció i actualització de contingut al DOM amb dades obtingudes del servidor. Processament amb map, filter, forEach.
-    </li>
-    <li>
-      <a href="#" class="subtema" target="_blank">7.5. Llibreries de suport (Axios, jQuery AJAX)</a><br>
-      Ús de llibreries per simplificar les crides HTTP (Axios, jQuery AJAX). Gestió d’errors amb try/catch.
-    </li>
-    <li>
-      <a href="#" class="subtema" target="_blank">7.6. Asincronia amb TypeScript</a><br>
-      Integració de funcions asíncrones amb tipatge en TypeScript. Declaració de Promeses tipades i respostes segures.
-    </li>
-    <li>
-      <a href="#" class="subtema" target="_blank">7.7. Connexió a MySQL via API</a><br>
-      Creació de rutes GET i POST, connexió amb bases de dades mitjançant API REST i middleware.
-    </li>
-    <li>
-      <a href="#" class="subtema" target="_blank">7.8. Promeses i async/await</a><br>
-      Gestió avançada d’operacions asíncrones amb Promises i async/await. Ús de try/catch/finally per controlar errors.
-    </li>
-    <li>
-      <a href="#" class="subtema" target="_blank">7.9. JSON Server i simulació d’APIs REST</a><br>
-      Creació d’un servidor local amb JSON Server. Peticions CRUD (GET, POST, PUT, DELETE) i proves d’API.
-    </li>
-    <li>
-      <a href="#" class="subtema" target="_blank">7.10. Introducció a Node.js i Express</a><br>
-      Conceptes bàsics de Node.js i Express per crear un backend senzill i connectar-lo amb el front-end.
-    </li>
-    <li>
-      <a href="#" class="subtema" target="_blank">7.11. Projecte final integrador CRUD + API REST</a><br>
-      Desenvolupament d’una aplicació completa amb Fetch/Axios i API REST (Node + Express). Gestió d’estat, validacions i documentació final.
-    </li>
-  </ul>
-</section>
-
-
-  <button class="back-top" onclick="window.scrollTo({top:0, behavior:'smooth'})">↑</button>
-
-  <footer>
-    Material didàctic d’ús docent · Institut Puig Castellar · Desenvolupament d’Aplicacions Web © 2025
+  <!-- 📬 FOOTER -->
+  <footer id="contacte" class="footer">
+    <p>💡 Projecte docent d'<strong>Alejandro Salido</strong> — Institut Puig Castellar</p>
+    <p>🔗 <a href="https://github.com/asalido2-cell/entorns_elpuig" target="_blank">Veure al GitHub</a></p>
   </footer>
- <script>
-    // Fade-in en scroll
-    const sections = document.querySelectorAll("section");
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add("visible");
-        }
-      });
-    }, { threshold: 0.15 });
-    sections.forEach(section => observer.observe(section));
-  </script>
+
+  <script src="index.js"></script>
 </body>
 </html>
